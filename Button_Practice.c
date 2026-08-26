@@ -9,9 +9,9 @@ int main()
 {
     stdio_init_all();
     for(int i =  0; i < NUM_BUTTONS; i++){
-    gpio_init(BUTTON_PINS[i]);
-    gpio_set_dir(BUTTON_PINS[i], GPIO_IN);
-    gpio_pull_up(BUTTON_PINS[i]);
+        gpio_init(BUTTON_PINS[i]);
+        gpio_set_dir(BUTTON_PINS[i], GPIO_IN);
+        gpio_pull_up(BUTTON_PINS[i]);
     }
 
     bool last_state[NUM_BUTTONS];
@@ -24,7 +24,7 @@ int main()
             bool current_state = gpio_get(BUTTON_PINS[i]);
 
             if  (last_state[i] && !current_state){
-                printf("button %d pressed\n", BUTTON_PINS[i]);
+                printf("BUTTON_PRESSED: %d\n", BUTTON_PINS[i]);
             }
         }
         sleep_ms(250);
