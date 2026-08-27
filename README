@@ -1,0 +1,29 @@
+This is my first hardware based project, the idea is simple:
+
+you have 8 buttons, that can be programmed to do whatever you want (except commit tax evasion)
+
+theres another button to change the profile you are on
+
+and finally theres a screen that will display the profile you are on, and can display 
+whatever you want on it.
+
+what functionality i have now:
+    -able to read input from buttons from the pi pico, and display which buttons are pressed
+    -able to create a basic json file which stores profile and button info
+
+what functionality im working on now:
+    -more fleshed out json files
+    -being able to create and save profiles
+    -make decisions on button presses based on current profile
+
+what functionality is planed in future:
+    -allow buttons to do a range of things like:
+        -work with OBS to change scenes, mute, ect.
+        -open programs, pause and play music.
+        -and other things that i cant think of
+    -add code to work with display (plan to use a 16x2 lcd as a start, may upgrade to 20x4)
+    -create a CLI to make it easy to update profiles
+    -once basic functionality is finished, add 8 buttons to the pico 
+    -support for both window and linux
+
+may also work on a gui for it, but eh
