@@ -1,6 +1,6 @@
 import json
 import os
-from createdefault import Create_default
+from helpers import createdefault as cd
 
 def display_profile(profile):
     print("profile: " + profile["profile_0"]["profile_name"])
@@ -21,7 +21,7 @@ print("here you will be able to change what the buttons do on the stream deck\n\
 try:
     file = open("save/profiles.json", "r")
 except FileNotFoundError:
-    Create_default()
+    cd.Create_default()
     file = open("save/profiles.json", "r")
 
 while True:
@@ -29,14 +29,16 @@ while True:
     print("a: edit a profile")
     print("b: display a profile")
     
-    inp = input("type a letter")
+    inp = input("type a letter: ")
 
     os.system('cls' if os.name == 'nt' else 'clear')
 
-    if inp == "a":
+    if inp.lower() == "a":
         print("you chose a\n\n")
-    elif inp == "b":
+    elif inp.lower() == "b":
         display_profile(json.load(file))
+    elif inp.lower() == "e":
+        exit()
     else:
         print("that was not an option\n\n")
 
